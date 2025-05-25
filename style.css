@@ -36,6 +36,17 @@ body {
     color: black;
 }
 
+.pokemon-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: wheat;
+    min-height: calc(100vh - 240px);
+    gap: 20px;
+    padding: 20px 0;
+}
+
 .footer {
     border: 1px solid black;
     background-color: #211799;

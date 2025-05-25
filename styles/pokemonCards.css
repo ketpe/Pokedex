@@ -1,0 +1,99 @@
+.Pflanze {
+    background-color: green;
+}
+
+.Feuer {
+    background-color: red;
+}
+
+.Wasser {
+    background-color: #0082ff;
+}
+
+.Käfer {
+    background-color: brown;
+}
+
+.Normal {
+    background-color: #b89759;
+}
+
+.card-view {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.main-view-pokemon {
+    display: flex;
+    padding: 15px 2px;
+    border: 1px solid black;
+    border-radius: 10%;
+    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.75);
+    width: 250px;
+    height: 250px;
+
+}
+
+.main-view-pokemon:hover {
+    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 1.75);
+}
+
+.main-view-pokemon-plus {
+    display: flex;
+    border: 2px solid black;
+    border-radius: 10%;
+    width: 250px;
+    height: 250px;
+}
+
+.pokemon-id {
+    display: flex;
+    justify-content: end;
+    padding-right: 10px;
+}
+
+.pokemon-name {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-type-and-img {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.pokemon-types {
+    width: 40%;
+    height: 150px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pokemon-types span {
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 20%;
+    text-align: center;
+
+}
+
+.pokemon-img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+}
+
+.pokemon-img img {
+    object-fit: contain;
+    transform: scale(1.3);
+
+}
