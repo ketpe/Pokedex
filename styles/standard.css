@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+    color: white;
+}
+
+.overflow-x-hide {
+    overflow-y: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+}
