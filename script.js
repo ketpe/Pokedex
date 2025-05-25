@@ -34,3 +34,16 @@ async function renderFirstTwentyPokemon() {
     }
     refContent.innerHTML += getTempEmptyCard();
 }
+async function loadMorePokemon() {
+    const refContent = document.getElementById('pokemonCards');
+    let loadMorePokemon = document.getElementById('load_More_Pokemon');
+    loadMorePokemon.remove();
+    for (let i = displayedPokemon; i < displayedPokemon + 20; i++) {
+        let response = await fetch(pokemon_List[i].url);
+        responsePokemon = await response.json();
+        await getGermanPokemonNames(responsePokemon);
+        refContent.innerHTML += getPokemonCardTemplate(responsePokemon, pokemonData);
+    }
+    displayedPokemon += 20;
+    refContent.innerHTML += getTempEmptyCard();
+}
