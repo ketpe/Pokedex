@@ -34,6 +34,7 @@ async function renderFirstTwentyPokemon() {
     }
     refContent.innerHTML += getTempEmptyCard();
 }
+
 async function loadMorePokemon() {
     const refContent = document.getElementById('pokemonCards');
     let loadMorePokemon = document.getElementById('load_More_Pokemon');
@@ -46,4 +47,22 @@ async function loadMorePokemon() {
     }
     displayedPokemon += 20;
     refContent.innerHTML += getTempEmptyCard();
+}
+async function renderdetailCard(pokemon) {
+    let contentRef = toggleClassListsByChangeView();
+    let response = await fetch(pokemon_List[pokemon - 1].url);
+    responsePokemon = await response.json();
+    await getGermanPokemon(responsePokemon)
+    contentRef.innerHTML += getDetailViewPokemonCard(responsePokemon, pokemonData);
+}
+function toggleClassListsByChangeView() {
+    let contentRef = document.getElementById("pokemonDetailOverlay");
+    document.body.classList.toggle('overflow-x-hide');
+    contentRef.classList.toggle('d-none');
+    contentRef.classList.toggle('d-flex');
+    return contentRef;
+}
+function closeDetailOverlay() {
+    let overlay = toggleClassListsByChangeView();
+    overlay.innerHTML = "";
 }

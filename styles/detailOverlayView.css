@@ -1,0 +1,93 @@
+.pokemon-detail-Overlay {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    /* halbtransparentes Schwarz */
+    z-index: 1000;
+}
+
+.detail-view-pokemon {
+    background: #6d4545;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    /* min-width: 300px; */
+    /* max-width: 90vw; */
+    text-align: center;
+}
+
+.detail-card-view {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.pokemon-tabs {
+    margin-top: 2rem;
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.tab-btn.active {
+    border-bottom: 2px solid #4CAF50;
+    /* Farbe nach Wunsch */
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+    padding: 1rem 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.arrow-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.arrow {
+    background: rgba(0, 0, 0, -0.1);
+    border: none;
+    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index: 2;
+    padding: 0;
+
+}
+
+.arrow:hover {
+    background: #e0e0e0;
+}
+
+/* https://www.perplexity.ai/search/wie-ruft-man-in-js-in-einem-te-1UqfBso1RX.GiuwYTXmodQ */
