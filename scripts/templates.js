@@ -36,8 +36,8 @@ function getDetailViewPokemonCard(pokemon, pokemonData) {
     return `<div onclick="stopEventBubbeling(event)" class="detail-view-pokemon ${pokemonData.types[0]}">
             <div class="detail-card-view" id="pokemonDetail${pokemon.id}">
                 <div class="arrow-container">
-                    <button onclick="getPrevPokemon" class="arrow left" id="prevPokemon">&#8592;</button>
-                    <button onclick="getNextPokemon" class="arrow right" id="nextPokemon">&#8594;</button>
+                    <button onclick="getPrevPokemon(${pokemon.id})" class="arrow left" id="prevPokemon">&#8592;</button>
+                    <button onclick="getNextPokemon(${pokemon.id})" class="arrow right" id="nextPokemon">&#8594;</button>
                 </div>
                 <div class="pokemon-id">#${pokemon.id}</div>
                 <h2 class="pokemon-name">${pokemonData.name}</h2>
