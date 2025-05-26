@@ -54,7 +54,9 @@ async function renderdetailCard(pokemon) {
     responsePokemon = await response.json();
     await getGermanPokemon(responsePokemon)
     contentRef.innerHTML += getDetailViewPokemonCard(responsePokemon, pokemonData);
+    initTabSwitching();
 }
+
 function toggleClassListsByChangeView() {
     let contentRef = document.getElementById("pokemonDetailOverlay");
     document.body.classList.toggle('overflow-x-hide');
@@ -70,4 +72,15 @@ function stopEventBubbeling(event) {
 function closeDetailOverlay() {
     let overlay = toggleClassListsByChangeView();
     overlay.innerHTML = "";
+}
+
+function initTabSwitching() {
+    document.querySelectorAll('.tab-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            button.classList.add('active');
+            document.getElementById(button.dataset.tab).classList.add('active');
+        });
+    });
 }
