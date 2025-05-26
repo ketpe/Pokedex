@@ -62,6 +62,11 @@ function toggleClassListsByChangeView() {
     contentRef.classList.toggle('d-flex');
     return contentRef;
 }
+
+function stopEventBubbeling(event) {
+    event.stopPropagation();
+}
+
 function closeDetailOverlay() {
     let overlay = toggleClassListsByChangeView();
     overlay.innerHTML = "";

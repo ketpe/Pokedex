@@ -33,7 +33,7 @@ function getTempEmptyCard() {
 }
 
 function getDetailViewPokemonCard(pokemon, pokemonData) {
-    return `<div class="detail-view-pokemon ${pokemonData.types[0]}">
+    return `<div onclick="stopEventBubbeling(event)" class="detail-view-pokemon ${pokemonData.types[0]}">
             <div class="detail-card-view" id="pokemonDetail${pokemon.id}">
                 <div class="arrow-container">
                     <button onclick="getPrevPokemon" class="arrow left" id="prevPokemon">&#8592;</button>
