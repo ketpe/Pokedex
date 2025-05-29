@@ -18,7 +18,7 @@
     background: #6d4545;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.9);
     /* min-width: 300px; */
     /* max-width: 90vw; */
     text-align: center;
@@ -78,7 +78,7 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
     cursor: pointer;
     transition: background 0.2s;
     z-index: 2;
