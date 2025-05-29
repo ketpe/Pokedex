@@ -55,6 +55,7 @@ async function renderdetailCard(pokemon, loadNew = true) {
     responsePokemon = await response.json();
     await getGermanPokemon(responsePokemon)
     contentRef.innerHTML += getDetailViewPokemonCard(responsePokemon, pokemonData);
+    deactivateBtnPreviousPokemonOnOne(responsePokemon.id);
     initTabSwitching();
 }
 
@@ -73,7 +74,7 @@ function stopEventBubbeling(event) {
 }
 
 function closeDetailOverlay() {
-    let overlay = toggleClassListsByChangeView();
+    let overlay = toggleClassListsByChangeView(true);
     overlay.innerHTML = "";
 }
 
@@ -87,6 +88,18 @@ function initTabSwitching() {
         });
     });
 }
+
+function deactivateBtnPreviousPokemonOnOne(pokemonid) {
+    if (pokemonid < 2) {
+        document.getElementById("prevPokemon").disabled = true;
+        document.getElementById("prevPokemon").classList.add('disable-arrow');
+    } else if (pokemonid > 2) {
+        document.getElementById("prevPokemon").disabled = false;
+        document.getElementById("prevPokemon").classList.remove('disable-arrow');
+
+    }
+}
+
 function getNextPokemon(pokemon) {
     renderdetailCard(pokemon + 1, false)
 }

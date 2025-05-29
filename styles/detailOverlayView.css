@@ -90,4 +90,9 @@
     background: #e0e0e0;
 }
 
-/* https://www.perplexity.ai/search/wie-ruft-man-in-js-in-einem-te-1UqfBso1RX.GiuwYTXmodQ */
+.disable-arrow {
+    background: transparent !important;
+    color: transparent;
+    box-shadow: none;
+    cursor: auto;
+}
