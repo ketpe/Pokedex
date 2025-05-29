@@ -13,6 +13,7 @@ let pokemonData = {
 
 function init() {
     loadPokemonListFromServer();
+    // test();
 }
 
 async function loadPokemonListFromServer() {

@@ -21,7 +21,7 @@ function getTypesTemplate(pokemonTypes) {
     let result = "";
     for (let i = 0; i < pokemonTypes.length; i++) {
         let typeResult = pokemonTypes[i];
-        result += `<span>${typeResult}</span>`
+        result += `<span class="${typeResult}">${typeResult}</span>`
     }
     return result;
 }

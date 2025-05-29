@@ -1,21 +1,29 @@
 .Pflanze {
-    background-color: green;
+    background-color: #58A951;
 }
 
 .Feuer {
-    background-color: red;
+    background-color: #E53B19;
 }
 
 .Wasser {
-    background-color: #0082ff;
+    background-color: #278BCC;
 }
 
 .Käfer {
-    background-color: brown;
+    background-color: #83AD25;
 }
 
 .Normal {
-    background-color: #b89759;
+    background-color: #A8A899;
+}
+
+.Kampf {
+    background-color: #A84C3D;
+}
+
+.Flug {
+    background-color: #87B5E5;
 }
 
 .card-view {
@@ -23,6 +31,10 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
+}
+
+.Gift {
+    background-color: #B486DC;
 }
 
 .main-view-pokemon {
