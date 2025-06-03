@@ -1,5 +1,5 @@
 function getPokemonCardTemplate(pokemon, pokemonData) {
-    return `<div onclick="renderdetailCard(${pokemon.id})" class="main-view-pokemon ${pokemonData.types[0]}">
+    return `<div onclick="renderdetailCard(${pokemon.id})" class="main-view-pokemon c-${pokemonData.types[0]}">
     <div class="card-view" id="pokemon${pokemon.id}">
         <div class="pokemon-id"> # ${pokemon.id}</div>
         <h2 class="pokemon-name">${pokemonData.name}</h2>
@@ -9,7 +9,7 @@ function getPokemonCardTemplate(pokemon, pokemonData) {
                     ${getTypesTemplate(pokemonData.types)}
                 </div>
                 <div class="pokemon-img">
-                    <img src="${pokemon.sprites.front_default}" alt="">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" alt="">
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@ function getTypesTemplate(pokemonTypes) {
     let result = "";
     for (let i = 0; i < pokemonTypes.length; i++) {
         let typeResult = pokemonTypes[i];
-        result += `<span class="${typeResult}">${typeResult}</span>`
+        result += `<img src="../assets/icons/${typeResult}.svg" alt="" class="ic-${typeResult}">`
     }
     return result;
 }
@@ -47,7 +47,7 @@ function getDetailViewPokemonCard(pokemon, pokemonData) {
                             ${getTypesTemplate(pokemonData.types)}
                         </div>
                         <div class="pokemon-img">
-                            <img src="${pokemon.sprites.front_default}"
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png"
                                 alt="">
                         </div>
                     </div>

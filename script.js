@@ -43,7 +43,10 @@ async function loadMorePokemon() {
     for (let i = displayedPokemon; i < displayedPokemon + 20; i++) {
         let response = await fetch(pokemon_List[i].url);
         responsePokemon = await response.json();
-        await getGermanPokemonNames(responsePokemon);
+        await getGermanPokemon(responsePokemon);
+        console.log(responsePokemon);
+        console.log(pokemonData);
+
         refContent.innerHTML += getPokemonCardTemplate(responsePokemon, pokemonData);
     }
     displayedPokemon += 20;
