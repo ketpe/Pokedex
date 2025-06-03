@@ -1,5 +1,15 @@
+.c-Boden {
+    background-color: #956833;
+    background: linear-gradient(300deg, rgba(149, 104, 51, 1) 0%, rgba(255, 142, 43, 1) 50%, rgba(149, 104, 51, 1) 100%);
+}
+
+.ic-Boden {
+    background-color: #956833;
+}
+
 .c-Pflanze {
     background-color: rgb(88, 169, 81);
+    background: linear-gradient(300deg, rgba(87, 199, 133, 1) 0%, rgba(88, 169, 81, 1) 50%, rgba(87, 199, 133, 1) 100%)
 }
 
 .ic-Pflanze {
@@ -8,6 +18,7 @@
 
 .c-Feuer {
     background-color: #E53B19;
+    background: linear-gradient(300deg, rgba(199, 136, 87, 1) 0%, rgba(229, 59, 25, 1) 49%, rgba(229, 192, 25, 1) 100%);
 }
 
 .ic-Feuer {
@@ -16,6 +27,7 @@
 
 .c-Wasser {
     background-color: #278BCC;
+    background: linear-gradient(300deg, rgba(39, 139, 204, 1) 0%, rgba(9, 9, 121, 1) 49%, rgba(0, 212, 255, 1) 100%);
 }
 
 .ic-Wasser {
@@ -24,6 +36,7 @@
 
 .c-Käfer {
     background-color: #83AD25;
+    background: linear-gradient(300deg, rgba(131, 173, 37, 1) 0%, rgba(87, 199, 133, 1) 84%, rgba(237, 221, 83, 1) 100%);
 }
 
 .ic-Käfer {
@@ -32,14 +45,17 @@
 
 .c-Normal {
     background-color: #A8A899;
+    background: linear-gradient(300deg, rgba(168, 168, 153, 1) 0%, rgba(87, 87, 77, 1) 50%, rgba(168, 168, 153, 1) 100%);
 }
 
 .ic-Normal {
     background-color: #A8A899;
+
 }
 
 .c-Kampf {
     background-color: #A84C3D;
+    background: linear-gradient(300deg, rgba(168, 76, 61, 1) 0%, rgba(105, 35, 24, 1) 50%, rgba(168, 76, 61, 1) 100%);
 }
 
 .ic-Kampf {
@@ -48,6 +64,7 @@
 
 .c-Flug {
     background-color: #87B5E5;
+    background: linear-gradient(300deg, rgba(135, 181, 229, 1) 0%, rgba(24, 86, 168, 1) 50%, rgba(135, 181, 229, 1) 100%);
 }
 
 .ic-Flug {
@@ -56,6 +73,7 @@
 
 .c-Elektro {
     background-color: #FFE64C;
+    background: linear-gradient(300deg, rgba(255, 230, 76, 1) 0%, rgba(143, 129, 81, 1) 50%, rgba(255, 230, 76, 1) 100%);
 }
 
 .ic-Elektro {
@@ -64,6 +82,7 @@
 
 .c-Gift {
     background-color: #864AB8;
+    background: linear-gradient(300deg, rgba(134, 74, 184, 1) 0%, rgba(196, 0, 245, 1) 50%, rgba(134, 74, 184, 1) 100%);
 }
 
 .ic-Gift {
@@ -72,6 +91,7 @@
 
 .c-Gestein {
     background-color: #A8995B;
+    background: linear-gradient(300deg, rgba(168, 153, 91, 1) 0%, rgba(181, 146, 7, 1) 50%, rgba(168, 153, 91, 1) 100%);
 }
 
 .ic-Gestein {
@@ -80,6 +100,7 @@
 
 .c-Geist {
     background-color: #633C64;
+    background: linear-gradient(300deg, rgba(99, 60, 100, 1) 0%, rgba(243, 0, 247, 1) 50%, rgba(99, 60, 100, 1) 100%);
 }
 
 .ic-Geist {
@@ -88,6 +109,7 @@
 
 .c-Stahl {
     background-color: #9999A8;
+    background: linear-gradient(300deg, rgba(153, 153, 168, 1) 0%, rgba(87, 87, 102, 1) 50%, rgba(153, 153, 168, 1) 100%);
 }
 
 .ic-Stahl {
@@ -96,6 +118,7 @@
 
 .c-Psycho {
     background-color: #E55973;
+    background: linear-gradient(300deg, rgba(229, 89, 115, 1) 0%, rgba(255, 0, 68, 1) 50%, rgba(229, 89, 115, 1) 100%);
 }
 
 .ic-Psycho {
@@ -104,6 +127,7 @@
 
 .c-Eis {
     background-color: #68BAAC;
+    background: linear-gradient(300deg, rgba(104, 186, 172, 1) 0%, rgba(0, 90, 199, 1) 50%, rgba(104, 186, 172, 1) 100%);
 }
 
 .ic-Eis {
@@ -112,6 +136,7 @@
 
 .c-Drache {
     background-color: #4D64AB;
+    background: linear-gradient(300deg, rgba(77, 100, 171, 1) 0%, rgba(0, 68, 255, 1) 50%, rgba(77, 100, 171, 1) 100%);
 }
 
 .ic-Drache {
@@ -120,6 +145,7 @@
 
 .c-Unlicht {
     background-color: #4D64AB;
+    background: linear-gradient(300deg, rgba(77, 100, 171, 1) 0%, rgba(39, 43, 48, 1) 50%, rgba(77, 100, 171, 1) 100%);
 }
 
 .ic-Unlicht {
@@ -128,6 +154,7 @@
 
 .c-Fee {
     background-color: #D480CF;
+    background: linear-gradient(300deg, rgba(212, 128, 207, 1) 0%, rgba(147, 0, 245, 1) 50%, rgba(212, 128, 207, 1) 100%);
 }
 
 .ic-Fee {

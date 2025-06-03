@@ -21,7 +21,7 @@ function getTypesTemplate(pokemonTypes) {
     let result = "";
     for (let i = 0; i < pokemonTypes.length; i++) {
         let typeResult = pokemonTypes[i];
-        result += `<img src="../assets/icons/${typeResult}.svg" alt="" class="ic-${typeResult}">`
+        result += `<img src="./assets/icons/${typeResult}.svg" alt="${typeResult}" title="${typeResult}-Typ" class="ic-${typeResult}">`
     }
     return result;
 }
@@ -33,7 +33,7 @@ function getTempEmptyCard() {
 }
 
 function getDetailViewPokemonCard(pokemon, pokemonData) {
-    return `<div onclick="stopEventBubbeling(event)" class="detail-view-pokemon ${pokemonData.types[0]}">
+    return `<div onclick="stopEventBubbeling(event)" class="detail-view-pokemon c-${pokemonData.types[0]}">
     <div class="detail-card-view" id="pokemonDetail${pokemon.id}">
         <div class="arrow-container">
             <button onclick="getPrevPokemon(${pokemon.id})" class="arrow left" id="prevPokemon">&#8592;</button>

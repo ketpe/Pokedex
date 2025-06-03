@@ -22,6 +22,7 @@ async function loadPokemonListFromServer() {
     pokemon_List = responseToJson.results;
     // console.log(pokemon_List);
     renderFirstTwentyPokemon();
+
 }
 async function renderFirstTwentyPokemon() {
     const refContent = document.getElementById('pokemonCards');
