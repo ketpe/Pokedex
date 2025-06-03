@@ -31,6 +31,7 @@ async function renderFirstTwentyPokemon() {
         responsePokemon = await response.json();
         await getGermanPokemon(responsePokemon)
         // console.log(pokemonData);
+        // console.log(responsePokemon);
         refContent.innerHTML += getPokemonCardTemplate(responsePokemon, pokemonData);
     }
     refContent.innerHTML += getTempEmptyCard();
