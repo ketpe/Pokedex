@@ -55,24 +55,20 @@ function getDetailViewPokemonCard(pokemon, pokemonData) {
             </div>
             <div class="pokemon-tabs">
                 <div class="tab-buttons">
-                    <button class="tab-btn active" data-tab="tab1">Info</button>
-                    <button class="tab-btn" data-tab="tab2">Stats</button>
-                    <button class="tab-btn" data-tab="tab3">Moves</button>
-                    <button class="tab-btn" data-tab="tab4">Evolution</button>
+                    <button class="tab-btn active" data-tab="tab1">Stats</button>
+                    <button class="tab-btn" data-tab="tab2">Moves</button>
+                    <button class="tab-btn" data-tab="tab3">Evolution</button>
+
                 </div>
-                <div class="tab-content active" id="tab1">
-                    <!-- Inhalt für Info -->
-                    <p>Basisinformationen zum Pokémon.</p>
-                </div>
-                <div class="tab-content" id="tab2">
+                <div class="tab-content" id="tab1">
                     <!-- Inhalt für Stats -->
                     <p>Statuswerte und Fähigkeiten.</p>
                 </div>
-                <div class="tab-content" id="tab3">
+                <div class="tab-content" id="tab2">
                     <!-- Inhalt für Moves -->
                     <p>Attacken und Bewegungen.</p>
                 </div>
-                <div class="tab-content" id="tab4">
+                <div class="tab-content" id="tab3">
                     <!-- Inhalt für Evolution -->
                     <p>Entwicklungsschritte.</p>
                 </div>
