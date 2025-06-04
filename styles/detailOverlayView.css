@@ -10,7 +10,7 @@
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
-    /* halbtransparentes Schwarz */
+
     z-index: 1000;
 }
 
@@ -51,8 +51,7 @@
 }
 
 .tab-btn.active {
-    border-bottom: 2px solid #4CAF50;
-    /* Farbe nach Wunsch */
+    border-bottom: 6px solid#fcfbfb;
     font-weight: bold;
 }
 
@@ -95,4 +94,17 @@
     color: transparent;
     box-shadow: none;
     cursor: auto;
+}
+
+.table-stats {
+    display: flex;
+    justify-content: center;
+}
+
+.table-stats>tbody>tr :first-child {
+    text-align: start;
+}
+
+.table-stats>tbody>tr :first-child {
+    padding-right: 50px;
 }

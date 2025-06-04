@@ -61,14 +61,14 @@ function getDetailViewPokemonCard(pokemon, pokemonData) {
 
         </div>
         <div class="tab-content active" id="tab1">
-            <table border="1">
+            <table class="table-stats">
                 <tr>
                     <td>Größe:</td>
                     <td>${(pokemon.height) * 10} cm</td>
                 </tr>
                 <tr>
                     <td>Typen:</td>
-                    <td>${pokemonData.types}</td>
+                    <td>${pokemonData.types}td>
                 </tr>
                 <tr>
                     <td>Lebenspunkte:</td>
