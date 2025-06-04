@@ -14,8 +14,8 @@ body {
     max-width: 1944px;
     margin: 0 auto;
     padding: 10px 20px;
-    background-color: wheat;
-    background-image: linear-gradient(wheat, #ec674a);
+    background-color: #27222b;
+    background-image: linear-gradient(300deg, rgba(39, 34, 43, 1) 0%, rgba(47, 4, 204, 1) 50%, rgba(44, 44, 82, 1) 100%);
     height: 120px;
 
 }
@@ -26,8 +26,12 @@ body {
 }
 
 .navbar-left img {
-    height: 50px;
+    height: 100px;
     margin-right: 10px;
+}
+
+.navbar-left h1 {
+    /* color: black; */
 }
 
 .navbar-right input {
@@ -41,7 +45,9 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: wheat;
+    background-color: #27222b;
+    background-image: linear-gradient(300deg, rgba(39, 34, 43, 1) 0%, rgba(47, 4, 204, 1) 50%, rgba(44, 44, 82, 1) 100%);
+    ;
     min-height: calc(100vh - 240px);
     gap: 20px;
     padding: 20px 0;
