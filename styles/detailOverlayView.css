@@ -10,18 +10,17 @@
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
-
     z-index: 1000;
 }
 
 .detail-view-pokemon {
-    background: #6d4545;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.9);
-    /* min-width: 300px; */
-    /* max-width: 90vw; */
     text-align: center;
+    height: 70%;
+    width: 35%;
+
 }
 
 .detail-card-view {
@@ -38,6 +37,7 @@
 .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ccc;
+    justify-content: center;
 }
 
 .tab-btn {
@@ -107,4 +107,52 @@
 
 .table-stats>tbody>tr :first-child {
     padding-right: 50px;
+}
+
+.evolution-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10px;
+
+
+}
+
+.evolution-view-pokemon {
+    display: flex;
+    padding: 0px 2px;
+    border: 1px solid black;
+    border-radius: 10%;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.75);
+    width: 90px;
+    height: 90px;
+
+}
+
+.evolution-view-pokemon:hover {
+    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+}
+
+.evolution-view-pokemon-aktiv {
+    display: flex;
+    padding: 0px 2px;
+    border-radius: 10%;
+    width: 90px;
+    height: 90px;
+}
+
+.mini-pokemon-img {
+    object-fit: cover;
+}
+
+.mini-pokemon-img img {
+    height: 50px;
+    width: 50px;
+}
+
+.mini-card-view {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
 }

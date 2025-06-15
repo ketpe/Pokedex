@@ -160,3 +160,23 @@
 .ic-Fee {
     background-color: #D480CF;
 }
+
+.navbar {
+    background-color: #27222b;
+    background-image: linear-gradient(300deg, rgba(39, 34, 43, 1) 0%, rgba(47, 4, 204, 1) 50%, rgba(44, 44, 82, 1) 100%);
+    height: 120px;
+}
+
+.navbar-right input {
+    color: black;
+}
+
+.pokemon-content {
+    background-color: #27222b;
+    background-image: linear-gradient(300deg, rgba(39, 34, 43, 1) 0%, rgba(47, 4, 204, 1) 50%, rgba(44, 44, 82, 1) 100%);
+}
+
+.footer {
+    background-color: #211799;
+    background-image: linear-gradient(#211799, #1d1859);
+}

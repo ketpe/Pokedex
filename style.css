@@ -14,10 +14,6 @@ body {
     max-width: 1944px;
     margin: 0 auto;
     padding: 10px 20px;
-    background-color: #27222b;
-    background-image: linear-gradient(300deg, rgba(39, 34, 43, 1) 0%, rgba(47, 4, 204, 1) 50%, rgba(44, 44, 82, 1) 100%);
-    height: 120px;
-
 }
 
 .navbar-left {
@@ -33,7 +29,6 @@ body {
 .navbar-right input {
     padding: 6px 10px;
     border-radius: 4px;
-    color: black;
 }
 
 .pokemon-content {
@@ -41,9 +36,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #27222b;
-    background-image: linear-gradient(300deg, rgba(39, 34, 43, 1) 0%, rgba(47, 4, 204, 1) 50%, rgba(44, 44, 82, 1) 100%);
-    ;
     min-height: calc(100vh - 240px);
     gap: 20px;
     padding: 20px 0;
@@ -51,7 +43,5 @@ body {
 
 .footer {
     border: 1px solid black;
-    background-color: #211799;
-    background-image: linear-gradient(#211799, #1d1859);
     height: 120px;
 }
