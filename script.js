@@ -1,4 +1,5 @@
 const MAIN_PATH_API = "https://pokeapi.co/api/v2/pokemon/";
+const POKEMON_SPECI_URL = "https://pokeapi.co/api/v2/pokemon-species/"
 const API_LOAD_LIMITER = "?limit=100000&offset=0";
 let pokemon_List = "";
 let test1 = "?limit=100000&offset=21"
@@ -7,32 +8,29 @@ let displayedPokemon = 20;
 let pokemonData = {
     names: [],
     types: [],
-    Id: []
-};
+    id: [],
 
+};
 
 function init() {
     loadPokemonListFromServer();
-    // test();
 }
 
 async function loadPokemonListFromServer() {
     let response = await fetch(MAIN_PATH_API + API_LOAD_LIMITER);
     let responseToJson = await response.json();
     pokemon_List = responseToJson.results;
-    // console.log(pokemon_List);
+    localStorage.setItem('pokemon_List', JSON.stringify(pokemon_List));
     renderFirstTwentyPokemon();
-
 }
+
 async function renderFirstTwentyPokemon() {
     const refContent = document.getElementById('pokemonCards');
     refContent.innerHTML = "";
     for (let i = 0; i < 20; i++) {
         let response = await fetch(pokemon_List[i].url);
         responsePokemon = await response.json();
-        await getGermanPokemon(responsePokemon)
-        // console.log(pokemonData);
-        // console.log(responsePokemon);
+        pokemonData = await getGermanPokemon(responsePokemon, firstRender = true);
         refContent.innerHTML += getPokemonCardTemplate(responsePokemon, pokemonData);
     }
     refContent.innerHTML += getTempEmptyCard();
@@ -42,32 +40,32 @@ async function loadMorePokemon() {
     const refContent = document.getElementById('pokemonCards');
     let loadMorePokemon = document.getElementById('load_More_Pokemon');
     loadMorePokemon.remove();
-    for (let i = displayedPokemon; i < displayedPokemon + 20; i++) {
+    for (let i = displayedPokemon; i < displayedPokemon + 200; i++) {
         let response = await fetch(pokemon_List[i].url);
         responsePokemon = await response.json();
         await getGermanPokemon(responsePokemon);
-        console.log(responsePokemon);
-        console.log(pokemonData);
-
         refContent.innerHTML += getPokemonCardTemplate(responsePokemon, pokemonData);
     }
     displayedPokemon += 20;
     refContent.innerHTML += getTempEmptyCard();
 }
-async function renderdetailCard(pokemon, loadNew = true) {
-    let contentRef = toggleClassListsByChangeView(loadNew);
+
+async function renderDetailCard(pokemon, toggleOverlay = true) {
+    let contentRef = toggleClassListsByChangeView(toggleOverlay);
     contentRef.innerHTML = "";
     let response = await fetch(pokemon_List[pokemon - 1].url);
     responsePokemon = await response.json();
-    await getGermanPokemon(responsePokemon)
-    contentRef.innerHTML += getDetailViewPokemonCard(responsePokemon, pokemonData);
+    evolutionData = await getEvolutionChain(pokemon);
+    pokemonData = await getGermanPokemon(responsePokemon);
+    contentRef.innerHTML += getDetailViewPokemonCard(responsePokemon, pokemonData, evolutionData);
     deactivateBtnPreviousPokemonOnOne(responsePokemon.id);
     initTabSwitching();
+
 }
 
-function toggleClassListsByChangeView(loadNew) {
+function toggleClassListsByChangeView(toggleOverlay) {
     let contentRef = document.getElementById("pokemonDetailOverlay");
-    if (loadNew) {
+    if (toggleOverlay) {
         document.body.classList.toggle('overflow-x-hide');
         contentRef.classList.toggle('d-none');
         contentRef.classList.toggle('d-flex');
@@ -107,8 +105,80 @@ function deactivateBtnPreviousPokemonOnOne(pokemonid) {
 }
 
 function getNextPokemon(pokemon) {
-    renderdetailCard(pokemon + 1, false)
+    renderDetailCard(pokemon + 1, false)
 }
 function getPrevPokemon(pokemon) {
-    renderdetailCard(pokemon - 1, false)
+    renderDetailCard(pokemon - 1, false)
+}
+
+async function getEvolutionChain(pokemon) {
+    let specialPokemonUrl = await fetch(POKEMON_SPECI_URL + pokemon + '/')
+    specialPokemonUrl = await specialPokemonUrl.json();
+    let evoChainUrl = await fetch(specialPokemonUrl.evolution_chain.url);
+    let evoChain = await evoChainUrl.json();
+    let evolutionList = getAllSpecies(evoChain.chain);
+    let evolutionPokemon = [];
+    evolutionList = getIdOfEvolutionPok(evolutionList, evolutionPokemon);
+    let evoPokemonArray = await getEvolutionPokemonData(evolutionPokemon);
+    let evolutionData = getEvolutionList(evoPokemonArray)
+    return evolutionData
+}
+
+function getIdOfEvolutionPok(evolutionList, evolutionPokemon) {
+    for (let i = 0; i < evolutionList.length; i++) {
+        evolutionPokemon.push(getIdFromUrl(evolutionList[i].url))
+    }
+    return evolutionPokemon;
+}
+
+function getIdFromUrl(url) {
+    const match = url.match(/\/(\d+)\/?$/);
+    return match ? parseInt(match[1], 10) : null;
+}
+
+async function getEvolutionPokemonData(evolutionList) {
+    let pokemon_List = JSON.parse(localStorage.getItem('pokemon_List'));
+    let evolutionPokemon = [];
+    for (let i = 0; i < evolutionList.length; i++) {
+        let response = await fetch(pokemon_List[evolutionList[i] - 1].url);
+        evolutionPokemon.push(await response.json());
+        console.log(evolutionPokemon);
+    }
+
+    return evolutionPokemon;
+}
+
+
+function getAllSpecies(chain) {
+    let speciesList = [];
+    if (chain.species) {
+        speciesList.push(chain.species);
+    }
+    if (chain.evolves_to && chain.evolves_to.length > 0) {
+        chain.evolves_to.forEach(evo => {
+            speciesList = speciesList.concat(getAllSpecies(evo));
+        });
+    }
+    return speciesList;
+}
+
+async function getEvolutionList(evoPokemonArray) {
+    let evolutionData = []
+    for (let i = 0; i < evoPokemonArray.length; i++) {
+        evolutionData.push(await getGermanPokemon(evoPokemonArray[i]));
+    }
+    return evolutionData
+}
+
+function getEvolutionTemplate(pokemonData, evolutionData) {
+    let result = "";
+    for (let i = 0; i < evolutionData.length; i++) {
+        if (pokemonData.id === evolutionData[i].id) {
+            singleResult = evolutionCardTemplateActiv(evolutionData[i])
+        } else {
+            singleResult = evolutionCardTemplate(evolutionData[i])
+        }
+        result += singleResult
+    }
+    return result
 }

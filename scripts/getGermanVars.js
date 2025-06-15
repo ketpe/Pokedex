@@ -2,8 +2,8 @@ async function getGermanPokemon(pokemon) {
     clearPokemonData();
     await getGermanPokemonNames(pokemon);
     await getGermanPokemonTypes(pokemon.types);
-    pokemonData.Id = pokemon.id;
-    // console.log(pokemonData);
+    pokemonData.id = pokemon.id;
+    return pokemonData;
 }
 
 async function getGermanPokemonNames(pokemon) {
@@ -11,11 +11,10 @@ async function getGermanPokemonNames(pokemon) {
     pokemonName = await responsePokemonName.json();
     pokemonName = pokemonName.names[5].name;
     pokemonData.name = pokemonName;
-
+    return pokemonData
 }
 
 async function getGermanPokemonTypes(pokemon) {
-    // console.log(pokemon);
     let pokemontypes = [];
     for (let index = 0; index < pokemon.length; index++) {
         pokemontypes = await fetch(pokemon[index].type.url)
@@ -30,7 +29,7 @@ function clearPokemonData() {
     return pokemonData = {
         name: [],
         types: [],
-        Id: []
+        id: []
     };
 }
 
