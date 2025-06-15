@@ -26,31 +26,14 @@
             </div>
         </nav>
         <div onclick="closeDetailOverlay()" class="pokemon-detail-Overlay d-none" id="pokemonDetailOverlay"></div>
-        <div class="pokemon-content" id="pokemonCards">
-
-            <div class="main-view-pokemon grass">
-                <div class="card-view" id="pokemon">
-                    <div class="pokemon-id">#1</div>
-                    <h2 class="pokemon-name">NAME</h2>
-                    <div>
-                        <div class="pokemon-type-and-img">
-                            <div class="pokemon-types ">
-                                <span>Grass</span>
-                                <span>Poision</span>
-                            </div>
-                            <div class="pokemon-img">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-                                    alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="loading-overlay d-none" id="loadingSpinnerOverlay">
+            <img src="./assets/img/loadingSpinner.svg" class="rotate-spinner" alt="loading Screen">
         </div>
-    </div>
-    <footer class="footer">
+        <div class="pokemon-content" id="pokemonCards">
+        </div>
+        <footer class="footer">
 
-    </footer>
+        </footer>
 </body>
 <script src="./script.js"></script>
 <script src="./scripts/templates.js"></script>

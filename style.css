@@ -45,3 +45,35 @@ body {
     border: 1px solid black;
     height: 120px;
 }
+
+.loading-overlay {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+
+.rotate-spinner {
+    width: 250px;
+    height: auto;
+    animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -25,6 +25,7 @@ async function loadPokemonListFromServer() {
 }
 
 async function renderFirstTwentyPokemon() {
+    toggleloadingSpinner()
     const refContent = document.getElementById('pokemonCards');
     refContent.innerHTML = "";
     for (let i = 0; i < 20; i++) {
@@ -34,13 +35,15 @@ async function renderFirstTwentyPokemon() {
         refContent.innerHTML += getPokemonCardTemplate(responsePokemon, pokemonData);
     }
     refContent.innerHTML += getTempEmptyCard();
+    toggleloadingSpinner()
 }
 
 async function loadMorePokemon() {
+    toggleloadingSpinner()
     const refContent = document.getElementById('pokemonCards');
     let loadMorePokemon = document.getElementById('load_More_Pokemon');
     loadMorePokemon.remove();
-    for (let i = displayedPokemon; i < displayedPokemon + 200; i++) {
+    for (let i = displayedPokemon; i < displayedPokemon + 20; i++) {
         let response = await fetch(pokemon_List[i].url);
         responsePokemon = await response.json();
         await getGermanPokemon(responsePokemon);
@@ -48,6 +51,7 @@ async function loadMorePokemon() {
     }
     displayedPokemon += 20;
     refContent.innerHTML += getTempEmptyCard();
+    toggleloadingSpinner();
 }
 
 async function renderDetailCard(pokemon, toggleOverlay = true) {
@@ -66,7 +70,7 @@ async function renderDetailCard(pokemon, toggleOverlay = true) {
 function toggleClassListsByChangeView(toggleOverlay) {
     let contentRef = document.getElementById("pokemonDetailOverlay");
     if (toggleOverlay) {
-        document.body.classList.toggle('overflow-x-hide');
+        document.body.classList.toggle('overflow-y-hide');
         contentRef.classList.toggle('d-none');
         contentRef.classList.toggle('d-flex');
     }
@@ -181,4 +185,9 @@ function getEvolutionTemplate(pokemonData, evolutionData) {
         result += singleResult
     }
     return result
+}
+
+function toggleloadingSpinner() {
+    document.getElementById("loadingSpinnerOverlay").classList.toggle('d-none');
+    document.body.classList.toggle('overflow-y-hide');
 }
