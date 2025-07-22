@@ -21,6 +21,8 @@ async function loadPokemonListFromServer() {
     let responseToJson = await response.json();
     pokemon_List = responseToJson.results;
     localStorage.setItem('pokemon_List', JSON.stringify(pokemon_List));
+    console.log(pokemon_List);
+
     renderFirstTwentyPokemon();
 }
 
