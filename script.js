@@ -5,15 +5,10 @@ let pokemon_List = "";
 let test1 = "?limit=100000&offset=21"
 let firstload = true;
 let displayedPokemon = 20;
-let pokemonData = {
-    names: [],
-    types: [],
-    id: [],
-
-};
 
 function init() {
     loadPokemonListFromServer();
+    getSearchList();
 }
 
 async function loadPokemonListFromServer() {
@@ -21,8 +16,6 @@ async function loadPokemonListFromServer() {
     let responseToJson = await response.json();
     pokemon_List = responseToJson.results;
     localStorage.setItem('pokemon_List', JSON.stringify(pokemon_List));
-    console.log(pokemon_List);
-
     renderFirstTwentyPokemon();
 }
 
@@ -33,7 +26,7 @@ async function renderFirstTwentyPokemon() {
     for (let i = 0; i < 20; i++) {
         let response = await fetch(pokemon_List[i].url);
         responsePokemon = await response.json();
-        pokemonData = await getGermanPokemon(responsePokemon, firstRender = true);
+        pokemonData = await getGermanPokemon(responsePokemon);
         refContent.innerHTML += getPokemonCardTemplate(responsePokemon, pokemonData);
     }
     refContent.innerHTML += getTempEmptyCard();
@@ -192,4 +185,17 @@ function getEvolutionTemplate(pokemonData, evolutionData) {
 function toggleloadingSpinner() {
     document.getElementById("loadingSpinnerOverlay").classList.toggle('d-none');
     document.body.classList.toggle('overflow-y-hide');
+}
+
+async function getSearchList() {
+    let pokemon_List_for_Search = JSON.parse(localStorage.getItem('pokemon_List'));
+    let pokemonData_Search = [];
+    for (let i = 0; i < 1025; i++) {
+        let responsefetch = await fetch(pokemon_List_for_Search[i].url);
+        let responsePokemonforList = await responsefetch.json();
+        let pokemonData = await getGermanPokemon(responsePokemonforList);
+        pokemonData_Search.push(pokemonData);
+
+    }
+    localStorage.setItem('pokemonData_Search', JSON.stringify(pokemonData_Search));
 }
