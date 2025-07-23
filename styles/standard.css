@@ -5,8 +5,8 @@
     color: white;
 }
 
-.overflow-y-hide {
-    overflow-y: hidden;
+.overflow-hide {
+    overflow: hidden;
 }
 
 a {

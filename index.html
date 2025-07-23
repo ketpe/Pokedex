@@ -20,9 +20,26 @@
                 <img src="./assets/icons/pokeball.png" alt="Logo" />
                 <h1>Pokedex</h1>
             </div>
-            <div class="navbar-right">
-                <input type="text" placeholder="Suche...">
 
+            <div class="navbar-right">
+                <div class="search-container">
+                    <input type="text" placeholder="Suche..." id="searchInput">
+                </div>
+                <div class="search-modus">
+                    <label>
+                        <input type="radio" name="searchMode" value="name" checked>
+                        Nach Name suchen
+                    </label>
+                    <label>
+                        <input type="radio" name="searchMode" value="id">
+                        Nach ID suchen
+                    </label>
+                </div>
+                <div class="search-overlay" id="searchOverlay">
+                    <button onclick="clearSearch()" class="clear-Search" id="clearSearch">&times;</button>
+                    <div id="searchResults" class="search-results">
+                    </div>
+                </div>
             </div>
         </nav>
         <div onclick="closeDetailOverlay()" class="pokemon-detail-Overlay d-none" id="pokemonDetailOverlay"></div>
@@ -38,6 +55,7 @@
 <script src="./script.js"></script>
 <script src="./scripts/templates.js"></script>
 <script src="./scripts/getGermanVars.js"></script>
+<script src="./scripts/searching.js"></script>
 
 
 </html>

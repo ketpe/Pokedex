@@ -138,3 +138,12 @@ function getTemplateEvo(idOfnextEvoPokemon) {
     return `<img src=""https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${idOfnextEvoPokemon}.png"," alt="" srcset="">`
 }
 
+function renderItemTemplate(item, mode) {
+    return `
+    <div onclick="renderDetailCard(${item.id})" class="result-item">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${item.id}.png" alt="${item.name}">
+      <span>ID:  ${item.id}</span>
+      <span>Name: ${item.name}</span>
+    </div>
+  `;
+}

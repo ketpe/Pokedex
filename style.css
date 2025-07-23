@@ -26,9 +26,19 @@ body {
     margin-right: 10px;
 }
 
+.navbar-right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
 .navbar-right input {
+    position: relative;
     padding: 6px 10px;
     border-radius: 4px;
+    z-index: 105;
 }
 
 .pokemon-content {
@@ -76,4 +86,82 @@ body {
     to {
         transform: rotate(360deg);
     }
+}
+
+.search-modus {
+    display: flex;
+    padding-top: 5px;
+    gap: 10px;
+}
+
+.search-results {
+    position: absolute;
+    border: 1px solid #ccc;
+    max-height: 80%;
+    overflow-y: auto;
+    width: 50%;
+    max-height: 300px;
+    display: none;
+    z-index: 100;
+    top: 25%;
+    right: 25%;
+}
+
+.result-item {
+    cursor: pointer;
+    border-radius: 1px solid;
+    display: flex;
+    align-items: center;
+    gap: 24px
+}
+
+.result-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.result-item {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.result-item>span:first-child {
+    width: 90px;
+    padding-left: 300px;
+}
+
+.search-overlay {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.clear-Search {
+    position: relative;
+    left: 25%;
+    top: -25%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 48px;
+    display: none;
+    z-index: 101;
+}
+
+.search-btn {
+    color: black;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
 }

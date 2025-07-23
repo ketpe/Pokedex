@@ -59,13 +59,12 @@ async function renderDetailCard(pokemon, toggleOverlay = true) {
     contentRef.innerHTML += getDetailViewPokemonCard(responsePokemon, pokemonData, evolutionData);
     deactivateBtnPreviousPokemonOnOne(responsePokemon.id);
     initTabSwitching();
-
 }
 
 function toggleClassListsByChangeView(toggleOverlay) {
     let contentRef = document.getElementById("pokemonDetailOverlay");
     if (toggleOverlay) {
-        document.body.classList.toggle('overflow-y-hide');
+        document.body.classList.toggle('overflow-hide');
         contentRef.classList.toggle('d-none');
         contentRef.classList.toggle('d-flex');
     }
@@ -141,12 +140,9 @@ async function getEvolutionPokemonData(evolutionList) {
     for (let i = 0; i < evolutionList.length; i++) {
         let response = await fetch(pokemon_List[evolutionList[i] - 1].url);
         evolutionPokemon.push(await response.json());
-        console.log(evolutionPokemon);
     }
-
     return evolutionPokemon;
 }
-
 
 function getAllSpecies(chain) {
     let speciesList = [];
@@ -184,18 +180,6 @@ function getEvolutionTemplate(pokemonData, evolutionData) {
 
 function toggleloadingSpinner() {
     document.getElementById("loadingSpinnerOverlay").classList.toggle('d-none');
-    document.body.classList.toggle('overflow-y-hide');
+    document.body.classList.toggle('overflow-hide');
 }
 
-async function getSearchList() {
-    let pokemon_List_for_Search = JSON.parse(localStorage.getItem('pokemon_List'));
-    let pokemonData_Search = [];
-    for (let i = 0; i < 1025; i++) {
-        let responsefetch = await fetch(pokemon_List_for_Search[i].url);
-        let responsePokemonforList = await responsefetch.json();
-        let pokemonData = await getGermanPokemon(responsePokemonforList);
-        pokemonData_Search.push(pokemonData);
-
-    }
-    localStorage.setItem('pokemonData_Search', JSON.stringify(pokemonData_Search));
-}
