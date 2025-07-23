@@ -18,7 +18,7 @@
     border-radius: 12px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.9);
     text-align: center;
-    height: 70%;
+    height: 72%;
     width: 35%;
 
 }
@@ -107,6 +107,10 @@
 
 .table-stats>tbody>tr :first-child {
     padding-right: 50px;
+}
+
+.table-stats>tbody>tr :nth-child(2) {
+    min-width: 80px;
 }
 
 .evolution-container {
