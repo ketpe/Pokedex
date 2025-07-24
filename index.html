@@ -15,37 +15,41 @@
 
 <body onload="init()">
     <div id="wrapper">
-        <nav class="navbar">
-            <div class="navbar-left">
-                <img src="./assets/icons/pokeball.png" alt="Logo" />
-                <h1>Pokedex</h1>
-            </div>
-            <div class="navbar-right">
-                <div class="search-container">
-                    <input type="text" placeholder="Suche..." id="searchInput">
+        <div class="content-limiter">
+            <nav class="navbar">
+                <div class="navbar-left">
+                    <img src="./assets/icons/pokeball.png" alt="Logo" />
+                    <h1>Pokedex</h1>
                 </div>
-                <div class="search-modus">
-                    <label>
-                        <input type="radio" name="searchMode" value="name" checked>
-                        Nach Name suchen
-                    </label>
-                    <label>
-                        <input type="radio" name="searchMode" value="id">
-                        Nach ID suchen
-                    </label>
-                </div>
-                <div class="search-overlay" id="searchOverlay">
-                    <button onclick="clearSearch()" class="clear-Search" id="clearSearch">&times;</button>
-                    <div id="searchResults" class="search-results">
+                <div class="navbar-right">
+                    <div class="search-container">
+                        <input type="text" placeholder="Suche..." id="searchInput">
+                    </div>
+                    <div class="search-modus">
+                        <label>
+                            <input type="radio" name="searchMode" value="name" checked>
+                            Nach Name suchen
+                        </label>
+                        <label>
+                            <input type="radio" name="searchMode" value="id">
+                            Nach ID suchen
+                        </label>
+                    </div>
+                    <div class="search-overlay" id="searchOverlay">
+                        <button onclick="clearSearch()" class="clear-Search" id="clearSearch">&times;</button>
+                        <div id="searchResults" class="search-results">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
         <div onclick="closeDetailOverlay()" class="pokemon-detail-Overlay d-none" id="pokemonDetailOverlay"></div>
         <div class="loading-overlay d-none" id="loadingSpinnerOverlay">
             <img src="./assets/img/loadingspinner.svg" class="rotate-spinner" alt="loading Screen">
         </div>
-        <div class="pokemon-content" id="pokemonCards">
+        <div class="content-limiter-body">
+            <div class="pokemon-content" id="pokemonCards">
+            </div>
         </div>
         <footer class="footer">
 

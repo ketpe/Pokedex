@@ -14,6 +14,7 @@ body {
     max-width: 1944px;
     margin: 0 auto;
     padding: 10px 20px;
+    height: 120px;
 }
 
 .navbar-left {
@@ -48,11 +49,17 @@ body {
     min-height: calc(100vh - 240px);
     gap: 20px;
     padding: 20px 0;
+    max-width: 1920px;
 }
 
 .footer {
     border: 1px solid black;
     height: 120px;
+}
+
+.content-limiter-body {
+    display: flex;
+    justify-content: center;
 }
 
 .loading-overlay {
