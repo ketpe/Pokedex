@@ -1,4 +1,4 @@
-const datalist = JSON.parse(localStorage.getItem("pokemonDataSearchList"));
+
 const input = document.getElementById('searchInput');
 const resultsDiv = document.getElementById('searchResults');
 const clearBtn = document.getElementById('clearSearch');
@@ -6,7 +6,9 @@ const overlay = document.getElementById('searchOverlay');
 
 
 input.addEventListener('input', () => {
+    const datalist = JSON.parse(localStorage.getItem("pokemonDataSearchList"));
     onSearchInput(datalist, input, resultsDiv, overlay);
+
 });
 
 function onSearchInput(data, input, container, overlay) {
