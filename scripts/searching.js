@@ -1,9 +1,7 @@
-
 const input = document.getElementById('searchInput');
 const resultsDiv = document.getElementById('searchResults');
 const clearBtn = document.getElementById('clearSearch');
 const overlay = document.getElementById('searchOverlay');
-
 
 input.addEventListener('input', () => {
     const datalist = JSON.parse(localStorage.getItem("pokemonDataSearchList"));
@@ -14,7 +12,6 @@ input.addEventListener('input', () => {
 function onSearchInput(data, input, container, overlay) {
     const mode = getSearchMode();
     const query = input.value.trim();
-
     const results = filterData(data, mode, query);
     if (results.length === 0) {
         hideResults(container);
@@ -32,7 +29,6 @@ function filterData(data, mode, query) {
     if (!query) return [];
     query = query.toLowerCase();
     if (mode === 'name' && query.length < 3) return [];
-
     return data.filter(item => {
         if (mode === 'name')
             return item.name.toLowerCase().includes(query);

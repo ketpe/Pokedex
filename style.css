@@ -31,7 +31,6 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-
 }
 
 .navbar-right input {
@@ -158,8 +157,6 @@ body {
     font-size: 48px;
     display: none;
     z-index: 101;
-
-
 }
 
 .search-btn {
@@ -181,7 +178,6 @@ body {
     .result-item {
         font-size: 1.2em;
     }
-
 }
 
 @media(max-width: 790px) {

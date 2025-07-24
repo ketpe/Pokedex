@@ -1,5 +1,4 @@
 async function getGermanPokemon(pokemon) {
-    // clearPokemonData();
     let pokemonData = { types: [], };
     await getGermanPokemonNames(pokemon, pokemonData);
     await getGermanPokemonTypes(pokemon.types, pokemonData);

@@ -110,6 +110,7 @@ function deactivateBtnPreviousPokemonOnOne(pokemonid) {
 function getNextPokemon(pokemon) {
     renderDetailCard(pokemon + 1, false)
 }
+
 function getPrevPokemon(pokemon) {
     renderDetailCard(pokemon - 1, false)
 }

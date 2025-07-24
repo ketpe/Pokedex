@@ -20,7 +20,6 @@
     text-align: center;
     height: 72%;
     width: 35%;
-
 }
 
 .detail-card-view {
@@ -82,7 +81,6 @@
     transition: background 0.2s;
     z-index: 2;
     padding: 0;
-
 }
 
 .arrow:hover {
@@ -117,8 +115,6 @@
     display: flex;
     justify-content: space-evenly;
     padding-top: 10px;
-
-
 }
 
 .evolution-view-pokemon {
@@ -129,7 +125,6 @@
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.75);
     width: 90px;
     height: 90px;
-
 }
 
 .evolution-view-pokemon:hover {
