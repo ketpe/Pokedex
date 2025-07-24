@@ -1,17 +1,4 @@
-async function getSearchList() {
-    let pokemon_List_for_Search = JSON.parse(localStorage.getItem('pokemon_List'));
-    let pokemonData_Search = [];
-    for (let i = 0; i < 1025; i++) {
-        let responsefetch = await fetch(pokemon_List_for_Search[i].url);
-        let responsePokemonforList = await responsefetch.json();
-        let pokemonData = await getGermanPokemon(responsePokemonforList);
-        pokemonData_Search.push(pokemonData);
-
-    }
-    localStorage.setItem('pokemonData_Search', JSON.stringify(pokemonData_Search));
-}
-
-const datalist = JSON.parse(localStorage.getItem("pokemonData_Search"));;
+const datalist = JSON.parse(localStorage.getItem("pokemonDataSearchList"));
 const input = document.getElementById('searchInput');
 const resultsDiv = document.getElementById('searchResults');
 const clearBtn = document.getElementById('clearSearch');
