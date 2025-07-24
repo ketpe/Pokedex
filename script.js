@@ -24,14 +24,9 @@ async function renderFirstTwentyPokemon() {
     refContent.innerHTML = "";
     let pokemonDataSearchList = [];
     for (let i = 0; i < 20; i++) {
-        let response = await fetch(pokemon_List[i].url);
-        responsePokemon = await response.json();
-        pokemonData = await getGermanPokemon(responsePokemon);
-        pokemonDataSearchList.push(pokemonData);
-        refContent.innerHTML += getPokemonCardTemplate(responsePokemon, pokemonData);
+        await prepartionAndRenderingCards(i, refContent, pokemonDataSearchList,)
     }
     localStorage.setItem('pokemonDataSearchList', JSON.stringify(pokemonDataSearchList));
-    console.log(pokemonDataSearchList);
     refContent.innerHTML += getTempEmptyCard();
     toggleloadingSpinner()
 }
@@ -43,16 +38,20 @@ async function loadMorePokemon() {
     loadMorePokemon.remove();
     let pokemonDataSearchList = JSON.parse(localStorage.getItem("pokemonDataSearchList"));
     for (let i = displayedPokemon; i < displayedPokemon + 20; i++) {
-        let response = await fetch(pokemon_List[i].url);
-        responsePokemon = await response.json();
-        pokemonData = await getGermanPokemon(responsePokemon);
-        pokemonDataSearchList.push(pokemonData);
-        refContent.innerHTML += getPokemonCardTemplate(responsePokemon, pokemonData);
+        await prepartionAndRenderingCards(i, refContent, pokemonDataSearchList,)
     }
     localStorage.setItem('pokemonDataSearchList', JSON.stringify(pokemonDataSearchList));
     displayedPokemon += 20;
     refContent.innerHTML += getTempEmptyCard();
     toggleloadingSpinner();
+}
+
+async function prepartionAndRenderingCards(i, refContent, pokemonDataSearchList,) {
+    let response = await fetch(pokemon_List[i].url);
+    responsePokemon = await response.json();
+    pokemonData = await getGermanPokemon(responsePokemon);
+    pokemonDataSearchList.push(pokemonData);
+    refContent.innerHTML += getPokemonCardTemplate(responsePokemon, pokemonData);
 }
 
 async function renderDetailCard(pokemon, toggleOverlay = true) {
