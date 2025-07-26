@@ -41,7 +41,7 @@ function getDetailViewPokemonCard(pokemon, pokemonData, evolutionData) {
         </div>
         <div class="pokemon-id">#${pokemon.id}</div>
         <h2 class="pokemon-name">${pokemonData.name}</h2>
-        <div>
+        <div class="detail-img-container">
             <div class="pokemon-type-and-img">
                 <div class="pokemon-types ">
                     ${getTypesTemplate(pokemonData.types)}

@@ -242,3 +242,19 @@ body {
         height: 60px;
     }
 }
+
+@media(max-height: 840px) {
+    .detail-view-pokemon {
+        height: 80%;
+    }
+
+    .detail-img-container>.pokemon-type-and-img>.pokemon-img {
+        height: 100px;
+    }
+
+    .detail-img-container>.pokemon-type-and-img>.pokemon-types img {
+        height: 32px;
+        width: 32px;
+    }
+
+}
